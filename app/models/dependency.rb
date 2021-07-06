@@ -11,9 +11,11 @@ class Dependency < ApplicationRecord
 
   def update_with_details
     details = DependencyDetailsFetcher.new(self).fetch
-    license_name = details[:license] || "Unknown"
-    license = License.find_or_create_by(name: license_name)
     self.source_repo_url = details[:url]
-    self.license = license
+    license_name = details[:license] || "Unknown"
+    self.license = License.find_or_create_by(name: license_name)
+    if license_name == "MIT-Hippocratic-1.2"
+      HippocraticAlertMailer.alert(name)
+    end
   end
 end

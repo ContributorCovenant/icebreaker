@@ -11,6 +11,6 @@ class PackageManager < ApplicationRecord
 
   private
   def set_language
-    self.language = Language.find_or_create_by(name: MANAGERS[self.name])
+    self.language = Language.find_or_create_by(name: MANAGERS[name])
   end
 end

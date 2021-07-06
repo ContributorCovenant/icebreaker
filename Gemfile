@@ -2,14 +2,14 @@ source 'https://rubygems.org'
 
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.3'
+ruby '2.7.2'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'dotenv'
 gem 'graphql-client'
 gem 'jbuilder', '~> 2.7'
 gem 'pg'
-gem 'puma', '~> 4.3'
+gem 'puma'
 gem 'rack-attack'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 gem 'sidekiq'
@@ -21,6 +21,9 @@ gem 'webpacker', '~> 4.0'
 # Someday I will understand the Rails Asset Pipeline + Webpacker,
 # but today is not that day.
 gem 'coffee-rails'
+
+# Transactional email service
+gem 'postmark-rails'
 
 group :development, :test do
   gem 'dotenv-rails'

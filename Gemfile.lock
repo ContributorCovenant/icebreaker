@@ -89,6 +89,7 @@ GEM
       concurrent-ruby (~> 1.0)
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
+    json (2.5.1)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -110,10 +111,15 @@ GEM
     nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     pg (1.2.2)
+    postmark (1.21.3)
+      json
+    postmark-rails (0.20.0)
+      actionmailer (>= 3.0.0)
+      postmark (~> 1.15)
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
-    puma (4.3.5)
+    puma (5.1.1)
       nio4r (~> 2.0)
     rack (2.2.3)
     rack-attack (6.2.2)
@@ -229,8 +235,9 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)
   pg
+  postmark-rails
   pry
-  puma (~> 4.3)
+  puma
   rack-attack
   rails (~> 6.0.2, >= 6.0.2.1)
   rspec-rails
@@ -241,7 +248,7 @@ DEPENDENCIES
   webpacker (~> 4.0)
 
 RUBY VERSION
-   ruby 2.5.3p105
+   ruby 2.7.2p137
 
 BUNDLED WITH
    2.1.4

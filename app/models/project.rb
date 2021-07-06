@@ -6,7 +6,7 @@ class Project < ApplicationRecord
   validates :name, uniqueness: true, presence: true
 
   def github_identifier
-    "#{self.org_name}/#{self.name}"
+    "#{org_name}/#{name}"
   end
 
 end

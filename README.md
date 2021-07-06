@@ -22,11 +22,25 @@ Challenge OSS maintainers to re-license with an ethical license so that Palantir
 
 # Local dev
 
-To create junk data, run `bin/rake defaults:sample_data`
+## Setup
+
+`bundle`
+
+`bundle exec rails db:create`
+
+`bundle exec rails db:schema:load`
+
+`cp .env.example .env`
+
+## Seed data
+
+To create junk data, run `bin/rake defaults:junk_data`
+
+## Real Data
 
 To set up your local environment with real data:
 
-* Copy `.env.example` to `.env`
-* Set the `GITHUB_TOKEN` in `.env` to any GitHub token with org and repo read permissions
-* Set defaults: `bin/rake defaults:init`
-* Fetch projects and their dependencies using the background job queue: `bin/rake scheduled_tasks:update
+- Copy `.env.example` to `.env`
+- Set the `GITHUB_TOKEN` in `.env` to any GitHub token with org and repo read permissions
+- Set defaults: `bin/rake defaults:init`
+- Fetch projects and their dependencies using the background job queue: `bin/rake scheduled_tasks:update
